@@ -1,10 +1,10 @@
 //
 //  Planet.hpp
 //  Trentham_Assign1
-//
-//  Created by Shane Trentham on 8/29/19.
-//  Copyright © 2019 Shane Trentham. All rights reserved.
-//
+//  Shane Trentham
+//  CSCI 3250
+//  9/17/2019
+//  Assignment 3
 #include "string"
 #ifndef Planet_hpp
 #define Planet_hpp

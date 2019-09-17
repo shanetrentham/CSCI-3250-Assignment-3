@@ -25,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		34455186232C286C00A0A503 /* LinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
 		34650BB82318DCC300310CA9 /* Trentham_Assign1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Trentham_Assign1; sourceTree = BUILT_PRODUCTS_DIR; };
 		34650BBB2318DCC300310CA9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		34650BC52318E19600310CA9 /* Planet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Planet.cpp; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 				34650BC62318E19600310CA9 /* Planet.hpp */,
 				34650BC82318E5E100310CA9 /* Planets.cpp */,
 				34650BC92318E5E100310CA9 /* Planets.hpp */,
+				34455186232C286C00A0A503 /* LinkedList.h */,
 			);
 			path = Trentham_Assign1;
 			sourceTree = "<group>";

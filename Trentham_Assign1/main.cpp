@@ -3,8 +3,8 @@
 //  Trentham_Assign1
 //  Shane Trentham
 //  CSCI 3250
-//  9/1/2019
-//  Assignment 1
+//  9/17/2019
+//  Assignment 3
 #include "Planet.hpp"
 #include "Planets.hpp"
 #include <iostream>
@@ -37,30 +37,11 @@ int getAlienPopulation() {
 void buildPlanet(std::string name, std::string madeOf, int pop, Planet *p, Planets *ps) {
     
     p = new Planet(name, madeOf, pop);
-    ps->addPlanet(*p);
-}
-
-int getPopulation(Planets *ps, int i) {
-    Planet selectPlanet = ps->get(i);
-    return selectPlanet.getAlienPopulation();
-}
-
-void printList(Planets *ps) {
-    
-    for (int i = 0; i < ps->getCount(); i++) {
-        Planet p = ps->get(i);
-        std::cout << i + 1 << ". " << p.getName() << std::endl;
+    for(int i = 0; i < 1000; i++)
+    {
+        ps->addPlanet(*p);
     }
-    
 }
-void printCount(Planets *ps) {
-    int num;
-    std::cout << "Which planet would you like to see the count for: ";
-    std::cin >> num;
-    Planet p = ps->get(num - 1);
-    std::cout << "The population for the planet " << p.getName() << " is: " << p.getAlienPopulation() << std::endl;
-}
-
 int main(int argc, const char * argv[]) {
     Planet *planet = new Planet();
     Planets *planets = new Planets();
@@ -69,12 +50,13 @@ int main(int argc, const char * argv[]) {
     int alienPop = 0;
     int choice = 0;
     
-    while (choice != 5) {
-        std::cout << "1. Add Planet." << std::endl;
-        std::cout << "2. Get count." << std::endl;
-        std::cout << "3. Show planet with highest Alien population." << std::endl;
-        std::cout << "4. Get population for a planet." << std::endl;
-        std::cout << "5. Quit." << std::endl;
+    while (choice != 6) {
+        std::cout << "1. Add Planet to the beginning." << std::endl;
+        std::cout << "2. Remove the first planet." << std::endl;
+        std::cout << "3. Remove the last planet." << std::endl;
+        std::cout << "4. Remove every planet." << std::endl;
+        std::cout << "5. Get the number of Planets in the list." << std::endl;
+        std::cout << "6. Quit." << std::endl;
         std::cin >> choice;
         switch(choice) {
             case 1:
@@ -87,20 +69,24 @@ int main(int argc, const char * argv[]) {
             }
             case 2:
             {
-                std::cout << "Number of Planet(s): " << planets->getCount() << std::endl;
+                planets->pop_back();
                 break;
             }
             case 3:
             {
-                Planet mostPop = planets->getMostPopulatedPlanet();
-                std::cout << "The most populated Planet is: " << mostPop.getName() << " with " << mostPop.getAlienPopulation() << " aliens that is made of " <<  mostPop.getMadeOf()<< std::endl;
+                planets->pop_front();
                 break;
             }
             case 4:
-                printList(planets);
-                printCount(planets);
+            {
+                planets->clear();
                 break;
+            }
             case 5:
+            {
+                std::cout << "There are " << planets->getCount() << " in the list." << std::endl;
+            }
+            case 6:
                 EXIT_SUCCESS;
                 break;
                 }
